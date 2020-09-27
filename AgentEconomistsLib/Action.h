@@ -18,10 +18,17 @@ namespace agenteconomists
 	public:
 		Action(std::string name) { m_name = name; }
 
+		/// <summary>
+		/// Return the name of the action.
+		/// </summary>
+		/// <returns>The name of the action</returns>
 		std::string getName() { return m_name; }
 
 	private:
-		std::string m_name;
+		/// <summary>
+		/// The name of the action.
+		/// </summary>
+		std::string m_name; 
 	};
 
 }
