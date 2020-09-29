@@ -1,7 +1,6 @@
 #pragma once
 
-#include "AgentType.h"
-#include "Resource.h"
+#include "AgentEconomistsLib.h"
 
 // Ignore warning 4251 (use of STL in a DLL)
 #pragma warning( push )
@@ -9,14 +8,11 @@
 
 namespace agenteconomists
 {
-
 	/// <summary>
-	/// An independent entity capable of a number of actions, depending on its type
+	/// Class that gathers all the existing actions, types of actions and resources
 	/// </summary>
-	class AELIB_API Agent
+	class Encyclopedia
 	{
-	private:
-		AgentType* m_type;
 	};
 
 }

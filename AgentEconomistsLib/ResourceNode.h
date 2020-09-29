@@ -1,7 +1,6 @@
 #pragma once
 
-#include "AgentType.h"
-#include "Resource.h"
+#include "AgentEconomistsLib.h"
 
 // Ignore warning 4251 (use of STL in a DLL)
 #pragma warning( push )
@@ -11,12 +10,11 @@ namespace agenteconomists
 {
 
 	/// <summary>
-	/// An independent entity capable of a number of actions, depending on its type
+	/// A ResourceNode is a tuple gathering the type of resource, its quantity
+	/// and its refreshing rate.
 	/// </summary>
-	class AELIB_API Agent
+	class ResourceNode
 	{
-	private:
-		AgentType* m_type;
 	};
 
 }
