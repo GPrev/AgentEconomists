@@ -2,14 +2,14 @@
 //
 
 #include <iostream>
-#include "Agent.h"
+#include "ContextParser.h"
 
 using namespace agenteconomists;
 
 int main()
 {
-    AgentType test("test");
-    std::cout << "Hello World!\n";
+    ContextParser parser;
+    Context c = parser.parseFile("context.json");
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage

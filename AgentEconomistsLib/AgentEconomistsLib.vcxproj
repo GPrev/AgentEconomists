@@ -23,25 +23,31 @@
     <ClInclude Include="Agent.h" />
     <ClInclude Include="AgentEconomistsLib.h" />
     <ClInclude Include="AgentType.h" />
+    <ClInclude Include="AgentTypeDescription.h" />
     <ClInclude Include="Context.h" />
     <ClInclude Include="Encyclopedia.h" />
     <ClInclude Include="Market.h" />
+    <ClInclude Include="ResourceDescription.h" />
     <ClInclude Include="ResourceNode.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Simulation.h" />
     <ClInclude Include="Zone.h" />
+    <ClInclude Include="ZoneDescription.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Action.cpp" />
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="AgentType.cpp" />
+    <ClCompile Include="AgentTypeDescription.cpp" />
     <ClCompile Include="Context.cpp" />
     <ClCompile Include="Encyclopedia.cpp" />
     <ClCompile Include="Market.cpp" />
+    <ClCompile Include="ResourceDescription.cpp" />
     <ClCompile Include="ResourceNode.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="Simulation.cpp" />
     <ClCompile Include="Zone.cpp" />
+    <ClCompile Include="ZoneDescription.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -351,3 +351,6 @@ MigrationBackup/
 
 # Doxygen
 Documentation/
+
+# Runner config files
+AgentEconomistsRunner/context.json

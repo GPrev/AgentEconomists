@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\Context">
+      <UniqueIdentifier>{bce6e86c-4459-40c9-a86e-ec689900c21b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Context">
+      <UniqueIdentifier>{cb8cdcd2-7d17-4634-92d0-fb9c82ce1d01}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h">
@@ -25,9 +31,6 @@
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="AgentType.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="Context.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Simulation.h">
@@ -48,6 +51,18 @@
     <ClInclude Include="ResourceNode.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="Context.h">
+      <Filter>Fichiers d%27en-tête\Context</Filter>
+    </ClInclude>
+    <ClInclude Include="AgentTypeDescription.h">
+      <Filter>Fichiers d%27en-tête\Context</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceDescription.h">
+      <Filter>Fichiers d%27en-tête\Context</Filter>
+    </ClInclude>
+    <ClInclude Include="ZoneDescription.h">
+      <Filter>Fichiers d%27en-tête\Context</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp">
@@ -57,9 +72,6 @@
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="AgentType.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Context.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Simulation.cpp">
@@ -79,6 +91,18 @@
     </ClCompile>
     <ClCompile Include="ResourceNode.cpp">
       <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="AgentTypeDescription.cpp">
+      <Filter>Fichiers sources\Context</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceDescription.cpp">
+      <Filter>Fichiers sources\Context</Filter>
+    </ClCompile>
+    <ClCompile Include="ZoneDescription.cpp">
+      <Filter>Fichiers sources\Context</Filter>
+    </ClCompile>
+    <ClCompile Include="Context.cpp">
+      <Filter>Fichiers sources\Context</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
