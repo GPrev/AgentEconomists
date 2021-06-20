@@ -1,5 +1,7 @@
 #pragma once
 
+#include<map>
+
 #include "AgentEconomistsLib.h"
 
 // Ignore warning 4251 (use of STL in a DLL)
@@ -9,7 +11,7 @@
 namespace agenteconomists
 {
 	/// <summary>
-	/// Class that describes the context of a simulation
+	/// Class that describes a zone of the simulation.
 	/// </summary>
 	class AELIB_API ZoneDescription
 	{
@@ -19,7 +21,12 @@ namespace agenteconomists
 
 	private:
 		std::string m_name;
+		std::map<std::string, int> m_nbAgents;
 	};
 }
+
+class ZoneDescription
+{
+};
 
 #pragma warning( pop )
