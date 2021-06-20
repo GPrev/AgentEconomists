@@ -9,7 +9,7 @@
 namespace agenteconomists
 {
 	/// <summary>
-	/// Class that describes the context of a simulation
+	/// Class that describes a resource.
 	/// </summary>
 	class AELIB_API ResourceDescription
 	{

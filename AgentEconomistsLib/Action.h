@@ -2,6 +2,9 @@
 
 #include <string>
 #include "AgentEconomistsLib.h"
+#include "Encyclopedia.h"
+#include "Zone.h"
+#include "Agent.h"
 
 // Ignore warning 4251 (use of STL in a DLL)
 #pragma warning( push )
@@ -24,6 +27,16 @@ namespace agenteconomists
 		/// <returns>The name of the action</returns>
 		std::string getName() { return m_name; }
 
+		/// <summary>
+		/// Check if an Agent is allowed to perform an action.
+		/// </summary>
+		/// <returns>True if the Agent can perform the action, false otherwise</returns>
+		virtual bool canExecute(Agent* p_agent, Zone* p_zone) = 0;
+
+		/// <summary>
+		/// Make an Agent perform an action.
+		/// </summary>
+		virtual void execute(Agent* p_agent, Zone* p_zone) = 0;
 	private:
 		/// <summary>
 		/// The name of the action.
