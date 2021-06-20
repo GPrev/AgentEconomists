@@ -1,6 +1,7 @@
 #pragma once
 
 #include "AgentEconomistsLib.h"
+#include "ActionDescription.h"
 
 // Ignore warning 4251 (use of STL in a DLL)
 #pragma warning( push )
@@ -9,7 +10,8 @@
 namespace agenteconomists
 {
 	/// <summary>
-	/// Class that describes the context of a simulation
+	/// Class that describes the type of agents that can exist in the simulation
+	/// and the different actions that they can perform.
 	/// </summary>
 	class AELIB_API AgentTypeDescription
 	{
@@ -19,6 +21,7 @@ namespace agenteconomists
 
 	private:
 		std::string m_name;
+		std::vector<ActionDescription> m_allowedActions;
 	};
 }
 
