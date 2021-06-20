@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h" />
+    <ClInclude Include="ActionDescription.h" />
     <ClInclude Include="Agent.h" />
     <ClInclude Include="AgentEconomistsLib.h" />
     <ClInclude Include="AgentType.h" />
@@ -36,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Action.cpp" />
+    <ClCompile Include="ActionDescription.cpp" />
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="AgentType.cpp" />
     <ClCompile Include="AgentTypeDescription.cpp" />

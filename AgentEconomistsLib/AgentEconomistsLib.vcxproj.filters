@@ -63,6 +63,9 @@
     <ClInclude Include="ZoneDescription.h">
       <Filter>Fichiers d%27en-tête\Context</Filter>
     </ClInclude>
+    <ClInclude Include="ActionDescription.h">
+      <Filter>Fichiers d%27en-tête\Context</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp">
@@ -102,6 +105,9 @@
       <Filter>Fichiers sources\Context</Filter>
     </ClCompile>
     <ClCompile Include="Context.cpp">
+      <Filter>Fichiers sources\Context</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionDescription.cpp">
       <Filter>Fichiers sources\Context</Filter>
     </ClCompile>
   </ItemGroup>
