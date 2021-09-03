@@ -16,10 +16,15 @@
 #define RESOURCE_NAME "name"
 #define ZONES "Zones"
 #define ZONE_NAME "name"
+#define NODES "Nodes"
+#define ZONE_RESOURCE "resource"
+#define ZONE_AMOUNT "initAmount"
+#define ZONE_GROWTH "growth"
 
 using namespace rapidjson;
+using namespace agenteconomists;
 
-agenteconomists::Context& ContextParser::parseFileTo(std::string _fileName, agenteconomists::Context& _rOut) const
+Context& ContextParser::parseFileTo(std::string _fileName, Context& _rOut) const
 {
 	std::ifstream fileStream(_fileName);
 	IStreamWrapper streamWrapper(fileStream);
@@ -29,7 +34,7 @@ agenteconomists::Context& ContextParser::parseFileTo(std::string _fileName, agen
 	return parseDocTo(doc, _rOut);
 }
 
-agenteconomists::Context& ContextParser::parseStringTo(std::string _json, agenteconomists::Context& _rOut) const
+Context& ContextParser::parseStringTo(std::string _json, Context& _rOut) const
 {
 	std::stringstream sStream;
 	sStream << _json;
@@ -55,7 +60,27 @@ void ContextParser::parseArray(const Value& _parent, std::string _arrayName, std
 	}
 }
 
-agenteconomists::Context& ContextParser::parseDocTo(Document& _doc, agenteconomists::Context& _rOut) const
+std::string ContextParser::getStringMember(const rapidjson::Value& _parent, std::string _memberName, std::string _defaultValue) const
+{
+	std::string res = _defaultValue;
+	if (_parent.HasMember(_memberName.c_str()))
+	{
+		res = _parent[_memberName.c_str()].GetString();
+	}
+	return res;
+}
+
+int ContextParser::getIntMember(const rapidjson::Value& _parent, std::string _memberName, int _defaultValue) const
+{
+	int res = _defaultValue;
+	if (_parent.HasMember(_memberName.c_str()))
+	{
+		res = _parent[_memberName.c_str()].GetInt();
+	}
+	return res;
+}
+
+Context& ContextParser::parseDocTo(Document& _doc, Context& _rOut) const
 {
 	if (!_doc.HasParseError())
 	{
@@ -74,17 +99,30 @@ agenteconomists::Context& ContextParser::parseDocTo(Document& _doc, agenteconomi
 	return _rOut;
 }
 
-void ContextParser::parseAgentType(const Value& _atypeJson, agenteconomists::Context& _parentContext) const
+void ContextParser::parseAgentType(const Value& _atypeJson, Context& _parentContext) const
 {
 	_parentContext.addAgentType(_atypeJson[AGENT_TYPE_NAME].GetString());
 }
 
-void ContextParser::parseResource(const Value& _resourceJson, agenteconomists::Context& _parentContext) const
+void ContextParser::parseResource(const Value& _resourceJson, Context& _parentContext) const
 {
 	_parentContext.addResource(_resourceJson[RESOURCE_NAME].GetString());
 }
 
-void ContextParser::parseZone(const Value& _zoneJson, agenteconomists::Context& _parentContext) const
+void ContextParser::parseZone(const Value& _zoneJson, Context& _parentContext) const
 {
-	_parentContext.addZone(_zoneJson[ZONE_NAME].GetString());
+	ZoneDescription& zone = _parentContext.addZone(_zoneJson[ZONE_NAME].GetString());
+
+	std::function<void(const Value&)> fnNode = [this, &zone](const Value& _val) { parseNode(_val, zone); };
+	parseArray(_zoneJson, NODES, fnNode);
+}
+
+void ContextParser::parseNode(const Value& _zoneJson, ZoneDescription& _parentZone) const
+{
+	std::string name = getStringMember(_zoneJson, ZONE_NAME);
+	std::string resource = getStringMember(_zoneJson, ZONE_RESOURCE);
+	int amout = getIntMember(_zoneJson, ZONE_AMOUNT);
+	int growth = getIntMember(_zoneJson, ZONE_GROWTH);
+	
+	_parentZone.addNode(name, resource, amout, growth);
 }

@@ -19,6 +19,10 @@ private:
 	void parseResource(const rapidjson::Value& _resourceJson, agenteconomists::Context& _parentContext) const;
 	void parseZone(const rapidjson::Value& _zoneJson, agenteconomists::Context& _parentContext) const;
 
+	void parseNode(const rapidjson::Value& _zoneJson, agenteconomists::ZoneDescription& _parentZone) const;
+
 	void parseArray(const rapidjson::Value& _parent, std::string _arrayName, std::function<void(const rapidjson::Value&)>& _parsingFunction) const;
+	std::string getStringMember(const rapidjson::Value& _parent, std::string _memberName, std::string _defaultValue = "") const;
+	int getIntMember(const rapidjson::Value& _parent, std::string _memberName, int _defaultValue = 0) const;
 };
 

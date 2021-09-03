@@ -81,6 +81,9 @@
     <ClInclude Include="Result.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="NodeDescription.h">
+      <Filter>Fichiers d%27en-tête\Context</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp">
@@ -139,6 +142,9 @@
     </ClCompile>
     <ClCompile Include="Result.cpp">
       <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeDescription.cpp">
+      <Filter>Fichiers sources\Context</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

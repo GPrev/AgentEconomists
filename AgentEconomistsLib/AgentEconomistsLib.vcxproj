@@ -30,6 +30,7 @@
     <ClInclude Include="Encyclopedia.h" />
     <ClInclude Include="Market.h" />
     <ClInclude Include="MarketHistory.h" />
+    <ClInclude Include="NodeDescription.h" />
     <ClInclude Include="ResourceDescription.h" />
     <ClInclude Include="ResourceHistory.h" />
     <ClInclude Include="ResourceNode.h" />
@@ -51,6 +52,7 @@
     <ClCompile Include="Encyclopedia.cpp" />
     <ClCompile Include="Market.cpp" />
     <ClCompile Include="MarketHistory.cpp" />
+    <ClCompile Include="NodeDescription.cpp" />
     <ClCompile Include="ResourceDescription.cpp" />
     <ClCompile Include="ResourceHistory.cpp" />
     <ClCompile Include="ResourceNode.cpp" />
