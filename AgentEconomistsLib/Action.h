@@ -2,9 +2,6 @@
 
 #include <string>
 #include "AgentEconomistsLib.h"
-#include "Encyclopedia.h"
-#include "Zone.h"
-#include "Agent.h"
 
 // Ignore warning 4251 (use of STL in a DLL)
 #pragma warning( push )
@@ -12,6 +9,9 @@
 
 namespace agenteconomists
 {
+	class Zone;
+	class Agent;
+
 
 	/// <summary>
 	/// Represents an action that an agent of the correct type can perform

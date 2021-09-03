@@ -26,6 +26,8 @@ namespace agenteconomists
 		void addResource(std::string name) { m_resources.push_back(ResourceDescription(name)); }
 		void addZone(std::string name) { m_zones.push_back(ZoneDescription(name)); }
 
+		std::string toString() const;
+
 	private:
 		std::vector<AgentTypeDescription> m_agentTypes;
 		std::vector<ResourceDescription> m_resources;

@@ -1,6 +1,7 @@
 #include "ContextParser.h"
 #include <fstream>
 #include <iostream>
+#include <sstream>
 
 #pragma warning(push, 0)        
 #include "rapidjson/document.h"
@@ -25,13 +26,29 @@ agenteconomists::Context& ContextParser::parseFileTo(std::string _fileName, agen
 	Document doc;
 	doc.ParseStream(streamWrapper);
 
-	if (!doc.HasParseError())
+	return parseDocTo(doc, _rOut);
+}
+
+agenteconomists::Context& ContextParser::parseStringTo(std::string _json, agenteconomists::Context& _rOut) const
+{
+	std::stringstream sStream;
+	sStream << _json;
+	IStreamWrapper streamWrapper(sStream);
+	Document doc;
+	doc.ParseStream(streamWrapper);
+
+	return parseDocTo(doc, _rOut);
+}
+
+agenteconomists::Context& ContextParser::parseDocTo(Document& _doc, agenteconomists::Context& _rOut) const
+{
+	if (!_doc.HasParseError())
 	{
 		_rOut.clear();
 
-		if (doc.HasMember(AGENT_TYPES))
+		if (_doc.HasMember(AGENT_TYPES))
 		{
-			const Value& rAgentTypes = doc[AGENT_TYPES];
+			const Value& rAgentTypes = _doc[AGENT_TYPES];
 			if (rAgentTypes.IsArray())
 			{
 				for (SizeType i = 0; i < rAgentTypes.Size(); i++)
@@ -42,9 +59,9 @@ agenteconomists::Context& ContextParser::parseFileTo(std::string _fileName, agen
 			}
 		}
 
-		if (doc.HasMember(RESOURCES))
+		if (_doc.HasMember(RESOURCES))
 		{
-			const Value& rResources = doc[RESOURCES];
+			const Value& rResources = _doc[RESOURCES];
 			if (rResources.IsArray())
 			{
 				for (SizeType i = 0; i < rResources.Size(); i++)
@@ -55,9 +72,9 @@ agenteconomists::Context& ContextParser::parseFileTo(std::string _fileName, agen
 			}
 		}
 
-		if (doc.HasMember(ZONES))
+		if (_doc.HasMember(ZONES))
 		{
-			const Value& rZones = doc[ZONES];
+			const Value& rZones = _doc[ZONES];
 			if (rZones.IsArray())
 			{
 				for (SizeType i = 0; i < rZones.Size(); i++)

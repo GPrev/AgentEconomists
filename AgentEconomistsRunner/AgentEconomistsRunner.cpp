@@ -10,6 +10,7 @@ int main()
 {
     ContextParser parser;
     Context c = parser.parseFile("context.json");
+    std::cout << c.toString();
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage

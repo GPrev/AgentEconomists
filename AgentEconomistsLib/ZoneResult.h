@@ -23,9 +23,9 @@ namespace agenteconomists
 		ZoneResult() {};
 
 	private:
-		std::map<std::string, ResourceHistory> m_rh; //< Resource histories for each resource.
-		std::map<std::string, AgentHistory> m_rh; //< Agent histories for each type of agent.
-		std::map<std::string, MarketHistory> m_rh; //< Market histories for each zone.
+		std::map<std::string, ResourceHistory> m_resourceHist; //< Resource histories for each resource.
+		std::map<std::string, AgentHistory> m_agentHist; //< Agent histories for each type of agent.
+		std::map<std::string, MarketHistory> m_MarketHist; //< Market histories for each zone.
 	};
 }
 

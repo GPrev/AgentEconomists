@@ -22,7 +22,7 @@ namespace agenteconomists
 
 	private:
 		std::string m_name;
-		std::vector<Action> m_actions;
+		std::vector<Action*> m_actions;
 	};
 
 }
