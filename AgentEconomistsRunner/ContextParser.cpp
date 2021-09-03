@@ -40,51 +40,51 @@ agenteconomists::Context& ContextParser::parseStringTo(std::string _json, agente
 	return parseDocTo(doc, _rOut);
 }
 
+void ContextParser::parseArray(const Value& _parent, std::string _arrayName, std::function<void(const Value&)>& _parsingFunction) const
+{
+	if (_parent.HasMember(_arrayName.c_str()))
+	{
+		const Value& arrayValue = _parent[_arrayName.c_str()];
+		if (arrayValue.IsArray())
+		{
+			for (SizeType i = 0; i < arrayValue.Size(); i++)
+			{
+				_parsingFunction(arrayValue[i]);
+			}
+		}
+	}
+}
+
 agenteconomists::Context& ContextParser::parseDocTo(Document& _doc, agenteconomists::Context& _rOut) const
 {
 	if (!_doc.HasParseError())
 	{
 		_rOut.clear();
 
-		if (_doc.HasMember(AGENT_TYPES))
-		{
-			const Value& rAgentTypes = _doc[AGENT_TYPES];
-			if (rAgentTypes.IsArray())
-			{
-				for (SizeType i = 0; i < rAgentTypes.Size(); i++)
-				{
-					const Value& rAgentType = rAgentTypes[i];
-					_rOut.addAgentType(rAgentType[AGENT_TYPE_NAME].GetString());
-				}
-			}
-		}
+		std::function<void(const Value&)> fnAgentType = [this, &_rOut](const Value& _val) { parseAgentType(_val, _rOut); };
+		parseArray(_doc, AGENT_TYPES, fnAgentType);
 
-		if (_doc.HasMember(RESOURCES))
-		{
-			const Value& rResources = _doc[RESOURCES];
-			if (rResources.IsArray())
-			{
-				for (SizeType i = 0; i < rResources.Size(); i++)
-				{
-					const Value& rResource = rResources[i];
-					_rOut.addResource(rResource[RESOURCE_NAME].GetString());
-				}
-			}
-		}
+		std::function<void(const Value&)> fnResource = [this, &_rOut](const Value& _val) { parseResource(_val, _rOut); };
+		parseArray(_doc, RESOURCES, fnResource);
 
-		if (_doc.HasMember(ZONES))
-		{
-			const Value& rZones = _doc[ZONES];
-			if (rZones.IsArray())
-			{
-				for (SizeType i = 0; i < rZones.Size(); i++)
-				{
-					const Value& rZone = rZones[i];
-					_rOut.addZone(rZone[ZONE_NAME].GetString());
-				}
-			}
-		}
+		std::function<void(const Value&)> fnZone = [this, &_rOut](const Value& _val) { parseZone(_val, _rOut); };
+		parseArray(_doc, ZONES, fnZone);
 	}
 
 	return _rOut;
+}
+
+void ContextParser::parseAgentType(const Value& _atypeJson, agenteconomists::Context& _parentContext) const
+{
+	_parentContext.addAgentType(_atypeJson[AGENT_TYPE_NAME].GetString());
+}
+
+void ContextParser::parseResource(const Value& _resourceJson, agenteconomists::Context& _parentContext) const
+{
+	_parentContext.addResource(_resourceJson[RESOURCE_NAME].GetString());
+}
+
+void ContextParser::parseZone(const Value& _zoneJson, agenteconomists::Context& _parentContext) const
+{
+	_parentContext.addZone(_zoneJson[ZONE_NAME].GetString());
 }
