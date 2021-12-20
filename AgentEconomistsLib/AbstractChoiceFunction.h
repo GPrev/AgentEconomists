@@ -21,9 +21,9 @@ namespace agenteconomists
 		/// <summary>
 		/// Evaluate the gain of an action.
 		/// </summary>
-		/// <param name="nbPossessed"> Number of possessed samples.</param>
+		/// <param name="p_nbPossessed"> Number of possessed samples.</param>
 		/// <returns>double: the "value" of the action.</returns>
-		virtual double evaluate(double nbPossessed) = 0;
+		virtual double evaluate(double p_nbPossessed) = 0;
 	};
 }
 
