@@ -84,6 +84,18 @@
     <ClInclude Include="NodeDescription.h">
       <Filter>Fichiers d%27en-tête\Context</Filter>
     </ClInclude>
+    <ClInclude Include="ActionSequence.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionProduce.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionConsume.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionDestroy.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp">
@@ -145,6 +157,18 @@
     </ClCompile>
     <ClCompile Include="NodeDescription.cpp">
       <Filter>Fichiers sources\Context</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionSequence.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionProduce.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionConsume.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ActionDestroy.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

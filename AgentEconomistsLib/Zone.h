@@ -1,6 +1,7 @@
 #pragma once
 
 #include "AgentEconomistsLib.h"
+#include "ResourceNode.h"
 
 // Ignore warning 4251 (use of STL in a DLL)
 #pragma warning( push )
@@ -14,6 +15,11 @@ namespace agenteconomists
 	/// </summary>
 	class Zone
 	{
+	public:
+		std::vector<ResourceNode>& getResourceNodes() { return m_resouceNodes; }
+
+	private:
+		std::vector<ResourceNode> m_resouceNodes;
 	};
 
 }

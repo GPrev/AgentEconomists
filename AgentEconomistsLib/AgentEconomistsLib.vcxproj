@@ -20,7 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h" />
+    <ClInclude Include="ActionConsume.h" />
     <ClInclude Include="ActionDescription.h" />
+    <ClInclude Include="ActionDestroy.h" />
+    <ClInclude Include="ActionProduce.h" />
+    <ClInclude Include="ActionSequence.h" />
     <ClInclude Include="Agent.h" />
     <ClInclude Include="AgentEconomistsLib.h" />
     <ClInclude Include="AgentHistory.h" />
@@ -43,7 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Action.cpp" />
+    <ClCompile Include="ActionConsume.cpp" />
     <ClCompile Include="ActionDescription.cpp" />
+    <ClCompile Include="ActionDestroy.cpp" />
+    <ClCompile Include="ActionProduce.cpp" />
+    <ClCompile Include="ActionSequence.cpp" />
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="AgentHistory.cpp" />
     <ClCompile Include="AgentType.cpp" />
