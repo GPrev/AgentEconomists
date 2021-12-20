@@ -18,6 +18,13 @@ namespace agenteconomists
 	{
 	public:
 		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="p_resource">The type of resource contained in the node</param>
+		/// <param name="p_initAmount">The amount of resources initially contained in the node</param>
+		ResourceNode(Resource* p_resource, int p_initAmount = 0) : m_resource(p_resource), m_amount(p_initAmount) {}
+
+		/// <summary>
 		/// Returns the type of resource contained in the node
 		/// </summary>
 		/// <returns>The type of resource contained in the node</returns>
