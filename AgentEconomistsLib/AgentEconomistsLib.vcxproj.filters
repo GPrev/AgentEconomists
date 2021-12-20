@@ -84,6 +84,18 @@
     <ClInclude Include="NodeDescription.h">
       <Filter>Fichiers d%27en-tête\Context</Filter>
     </ClInclude>
+    <ClInclude Include="AbstractChoiceFunction.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="CfLinear.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="CfBezier.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="CfInverse.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
     <ClInclude Include="ActionSequence.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
@@ -157,6 +169,18 @@
     </ClCompile>
     <ClCompile Include="NodeDescription.cpp">
       <Filter>Fichiers sources\Context</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractChoiceFunction.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="CfLinear.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="CfBezier.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="CfInverse.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="ActionSequence.cpp">
       <Filter>Fichiers sources</Filter>
