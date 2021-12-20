@@ -26,6 +26,10 @@
     <ClInclude Include="AgentHistory.h" />
     <ClInclude Include="AgentType.h" />
     <ClInclude Include="AgentTypeDescription.h" />
+    <ClInclude Include="AbstractChoiceFunction.h" />
+    <ClInclude Include="CfBezier.h" />
+    <ClInclude Include="CfInverse.h" />
+    <ClInclude Include="CfLinear.h" />
     <ClInclude Include="Context.h" />
     <ClInclude Include="Encyclopedia.h" />
     <ClInclude Include="Market.h" />
@@ -42,12 +46,16 @@
     <ClInclude Include="ZoneDescription.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractChoiceFunction.cpp" />
     <ClCompile Include="Action.cpp" />
     <ClCompile Include="ActionDescription.cpp" />
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="AgentHistory.cpp" />
     <ClCompile Include="AgentType.cpp" />
     <ClCompile Include="AgentTypeDescription.cpp" />
+    <ClCompile Include="CfBezier.cpp" />
+    <ClCompile Include="CfInverse.cpp" />
+    <ClCompile Include="CfLinear.cpp" />
     <ClCompile Include="Context.cpp" />
     <ClCompile Include="Encyclopedia.cpp" />
     <ClCompile Include="Market.cpp" />
