@@ -1,10 +1,11 @@
 #include "CfLinear.h"
 
-agenteconomists::CfLinear::CfLinear()
+agenteconomists::CfLinear::CfLinear(double coef)
+    : m_coef(coef)
 {
 }
 
-double agenteconomists::CfLinear::evaluate(double nbPossessed)
+double agenteconomists::CfLinear::evaluate(double p_nbPossessed)
 {
-    return 0.0;
+    return m_coef * p_nbPossessed;
 }

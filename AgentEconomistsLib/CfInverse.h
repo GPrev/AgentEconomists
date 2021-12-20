@@ -14,15 +14,20 @@ namespace agenteconomists
 	class AELIB_API CfInverse :
 		public AbstractChoiceFunction
 	{
-		CfInverse();
+		protected :
+			/// <summary>
+			/// Coefficient of the inverse function.
+			/// </summary>
+			double m_coef;
+		public:
+			CfInverse(double coef);
 
-		/// <summary>
-		/// The evaluate method is based on an inverse function.
-		/// </summary>
-		/// <returns>
-		/// double : the value of the choice.
-		/// </returns>
-		virtual double evaluate(double nbPossessed) override;
+			/// <summary>
+			/// The evaluate method is based on an inverse function.
+			/// </summary>
+			/// <param name="p_nbPossessed"> Number of possessed samples.</param>
+			/// <returns>double : the value of the choice.</returns>
+			virtual double evaluate(double p_nbPossessed) override;
 	};
 }
 #pragma warning( pop )

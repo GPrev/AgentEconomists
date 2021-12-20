@@ -1,10 +1,11 @@
 #include "CfInverse.h"
 
-agenteconomists::CfInverse::CfInverse()
+agenteconomists::CfInverse::CfInverse(double coef)
+	: m_coef(coef)
 {
 }
 
-double agenteconomists::CfInverse::evaluate(double nbPossessed)
+double agenteconomists::CfInverse::evaluate(double p_nbPossessed)
 {
-	return 0.0;
+	return 1 - (1/(m_coef * p_nbPossessed + 1));
 }

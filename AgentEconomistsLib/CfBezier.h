@@ -19,9 +19,9 @@ namespace agenteconomists
 		/// <summary>
 		/// The evaluate method is based on a bezier function.
 		/// </summary>
-		/// /// <param name="nbPossessed"> Number of possessed samples.</param>
+		/// /// <param name="p_nbPossessed"> Number of possessed samples.</param>
 		/// <returns>double: the value of the choice.</returns>
-		virtual double evaluate(double nbPossessed) override;
+		virtual double evaluate(double p_nbPossessed) override;
 	};
 }
 
