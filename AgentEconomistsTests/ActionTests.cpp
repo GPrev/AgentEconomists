@@ -1,5 +1,5 @@
 #include "CppUnitTest.h"
-#include "Agent.h"
+#include "ActionSequence.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace agenteconomists;
@@ -18,8 +18,8 @@ namespace AgentEconomistsTests
 		/// </summary>
 		TEST_METHOD(CreationTest)
 		{
-			//Action test("test");
-			//Assert::AreEqual(std::string("test"), test.getName());
+			ActionSequence test("test", std::vector<Action*>());
+			Assert::AreEqual(std::string("test"), test.getName());
 		}
 	};
 }
