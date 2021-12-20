@@ -19,7 +19,7 @@ namespace agenteconomists
         /// </summary>
         /// <param name="name">The name of the action</param>
         /// <param name="actions">The sub-actions, to be executed sequentially</param>
-        ActionSequence(std::string name, std::vector<Action*> actions) : Action(name), m_actions(actions) { };
+        ActionSequence(std::string p_name, std::vector<Action*>& p_actions) : Action(p_name), m_actions(p_actions) { };
 
 		/// <summary>
 		/// Check if an Agent is allowed to perform an action.
