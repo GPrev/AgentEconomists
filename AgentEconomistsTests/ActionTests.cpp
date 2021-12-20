@@ -18,8 +18,8 @@ namespace AgentEconomistsTests
 		/// </summary>
 		TEST_METHOD(CreationTest)
 		{
-			//Action test("test");
-			//Assert::AreEqual(std::string("test"), test.getName());
+			/*Action test("test");
+			Assert::AreEqual(std::string("test"), test.getName());*/
 		}
 	};
 }
